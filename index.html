@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker & Smart Ordering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome</h1>
+    <div class="options">
+      <button onclick="showSection('expenses')">Expenses</button>
+      <button onclick="showSection('orders')">Order Here</button>
+    </div>
+
+    <!-- Expenses Section -->
+    <div id="expenses" class="section hidden">
+      <h2>Expenses</h2>
+      <button onclick="showExpenseForm()">Add Expense</button>
+      <button onclick="showSummary()">Expense Summary</button>
+      <button onclick="showGraph()">Bar Graph</button>
+
+      <div id="expenseForm" class="hidden">
+        <h3>Add Expense</h3>
+        <form id="addExpenseForm">
+          <input type="date" id="date" required>
+          <input type="text" id="category" placeholder="Category" required>
+          <input type="number" id="amount" placeholder="Amount" required>
+          <input type="text" id="description" placeholder="Description">
+          <button type="submit">Save</button>
+        </form>
+      </div>
+
+      <div id="summary" class="hidden"></div>
+      <canvas id="expenseGraph" class="hidden"></canvas>
+    </div>
+
+    <!-- Orders Section -->
+    <div id="orders" class="section hidden">
+      <h2>Smart Ordering</h2>
+      <a href="https://www.amazon.in" target="_blank">Amazon</a><br>
+      <a href="https://www.flipkart.com" target="_blank">Flipkart</a><br>
+      <a href="https://www.myntra.com" target="_blank">Myntra</a><br><br>
+      <button onclick="addOrderAmount()">Add Order Amount to Expenses</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
